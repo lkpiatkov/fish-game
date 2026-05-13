@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fish</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Home screen -->
+  <div id="screen-home" class="screen active">
+    <h1>Fish</h1>
+    <input id="input-name" type="text" placeholder="Your name" maxlength="20"/>
+    <div class="button-row">
+      <button id="btn-create">Create room</button>
+      <button id="btn-join">Join room</button>
+    </div>
+    <div id="join-code-row" class="hidden">
+      <input id="input-code" type="text" placeholder="Room code" maxlength="6"/>
+      <button id="btn-join-confirm">Go</button>
+    </div>
+    <p id="home-error" class="error hidden"></p>
+  </div>
+
+  <!-- Lobby screen -->
+  <div id="screen-lobby" class="screen hidden">
+    <h1>Fish</h1>
+    <p>Room code: <strong id="lobby-code"></strong></p>
+    <p>Share this code with your friends!</p>
+    <ul id="lobby-players"></ul>
+    <p id="lobby-waiting">Waiting for players... <span id="lobby-count">1</span>/6</p>
+    <button id="btn-start" class="hidden">Start game</button>
+    <p id="lobby-error" class="error hidden"></p>
+  </div>
+
+  <!-- Game screen (placeholder for now) -->
+  <div id="screen-game" class="screen hidden">
+    <h1>Game starting!</h1>
+    <p>Game UI coming in Phase 3.</p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
