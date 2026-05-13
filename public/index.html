@@ -29,15 +29,41 @@
     <p>Room code: <strong id="lobby-code"></strong></p>
     <p>Share this code with your friends!</p>
     <ul id="lobby-players"></ul>
-    <p id="lobby-waiting">Waiting for players... <span id="lobby-count">1</span>/6</p>
+    <p id="lobby-waiting">Players: <span id="lobby-count">1</span>/6</p>
     <button id="btn-start" class="hidden">Start game</button>
     <p id="lobby-error" class="error hidden"></p>
   </div>
 
-  <!-- Game screen (placeholder for now) -->
+  <!-- Game screen -->
   <div id="screen-game" class="screen hidden">
-    <h1>Game starting!</h1>
-    <p>Game UI coming in Phase 3.</p>
+    <div id="player-name-header"></div>
+    <div id="game-header">
+      <div id="turn-indicator"></div>
+      <div id="score"></div>
+    </div>
+    <div id="player-list"></div>
+    <div id="my-hand"></div>
+    <button id="btn-declare-open" class="declare-btn">Declare a set</button>
+    <div id="ask-ui"></div>
+    <div id="game-log"></div>
+  </div>
+
+  <!-- Game over screen -->
+  <div id="screen-game-over" class="screen hidden">
+    <h1>Game over!</h1>
+    <p id="game-over-msg"></p>
+  </div>
+
+  <!-- Declaration modal -->
+  <div id="declare-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Declare a set</h2>
+      <div id="declare-form"></div>
+      <div class="button-row">
+        <button id="btn-declare-confirm">Confirm</button>
+        <button id="btn-declare-cancel">Cancel</button>
+      </div>
+    </div>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
